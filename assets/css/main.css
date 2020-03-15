@@ -1,0 +1,151 @@
+@import url('../css/fonts.css');
+:root{
+    --background: #d6dadd;
+    --bg-background : #fff;
+    --bg-text : #000;
+    --bg-hover: #2568ef;
+    --midnight: #4f7177;
+    --yellow: #fff200;
+     /*      font   */
+     --Abel: 'Abel', cursive;
+     --Anton: 'Anton', cursive;
+     --Josefin : 'Josefin', cursive;
+     --Lexend: 'Lexend', cursive;
+     --Livvic : 'Livvic', cursive;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-family: var(--Josefin);
+}
+
+/*---  Navigation CSS ---*/
+.navbar{
+    background-color: #d6dadd;
+}
+.navbar-brand{
+    font-family: var(--Anton);
+    font-size: 2.5em;
+    color: var(--bg-text) !important;
+}
+.nav-link{
+    font-size: 1.1em;
+    margin: 0.8em 1.5em;
+    color: var(--bg-text) !important;
+    font-family: var(--Abel);
+
+}
+.nav-link:hover{
+    color: var(--yellow) !important;
+}
+
+/*--- Content css ---*/
+.main-site{
+    justify-content: center;
+}
+
+.box-line1{
+    border-top: 0.4em solid var(--yellow);
+    border-left: 0.4em solid var(--yellow);
+    border-right: 0.4em solid var(--yellow);
+    margin-top: 6em;
+    padding: 2em;
+}
+
+.main-title{
+    margin-top: -6%;
+    text-align: center;
+    
+}
+.main-title h1{
+    margin: 0 38%;
+    background-color: white;
+    font-family: var(--Abel);
+}
+
+/*--- content samping css ---*/
+.main-content{
+    margin-top: -2.5em;
+}
+.content-side{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.content-side img{
+    width: 100%;
+    height: auto;
+}
+.content-side h4{
+    text-align: left;
+    font-size: 1.3em;
+    margin-top: 0.5em;
+    color: var(--midnight);
+    font-family: var(--Anton);
+}
+.content-side h4:hover{
+    color: var(--bg-text);
+}
+.content-side p{
+    text-align: left;
+    font-size: 1em;
+    margin-top: 0.5em;
+    color: var(--bg-text);
+    font-family: var(--Abel);
+}
+.content-side .side-content-btn{
+    padding: 0.5em 0.3em;
+    background: var(--yellow);
+    border-radius: 0.2em;
+    color: var(--bg-text);
+    font-family: var(--Livvic);
+    font-weight: 800;
+    font-size: 0.8em;
+}
+.content-side .side-content-btn:hover{
+    background: var(--midnight);
+    color: var(--bg-background);
+}
+
+/*--- content tengah css ---*/
+
+.content-center img{
+    width: 100%;
+    height: auto;
+}
+.content-center h2{
+    text-align: center;
+    margin-top: 0.5em;
+    color: var(--midnight);
+    font-family: var(--Anton);
+}
+.content-center h2:hover{
+    color: var(--bg-text);
+}
+.content-center p{
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    color: var(--bg-text);
+    font-family: var(--Abel);
+}
+.content-center .center-content-btn{
+    padding: 0.5em 1em;
+    justify-content: center;
+    background: var(--yellow);
+    border-radius: 0.2em;
+    color: var(--bg-text);
+    font-family: var(--Livvic);
+    font-weight: 950;
+    font-size: 1em;
+}
+.content-center .center-content-btn:hover{
+    background: var(--midnight);
+    color: var(--bg-background);
+}
+
+/*--- new-content css---*/
+.new{
+    background-color: var(--background);
+    margin-top: 3em;
+    padding: 1.5em;
+}

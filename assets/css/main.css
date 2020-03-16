@@ -1,6 +1,6 @@
 @import url('../css/fonts.css');
 :root{
-    --background: #d6dadd;
+    --background: #f1f3f2;
     --bg-background : #fff;
     --bg-text : #000;
     --bg-hover: #2568ef;
@@ -49,15 +49,16 @@ body{
     border-left: 0.4em solid var(--yellow);
     border-right: 0.4em solid var(--yellow);
     margin-top: 6em;
+    margin-bottom: 1em;
     padding: 2em;
 }
 
 .main-title{
-    margin-top: -6%;
+    margin-top: -3.5em;
     text-align: center;
     
 }
-.main-title h1{
+.main-title h2{
     margin: 0 38%;
     background-color: white;
     font-family: var(--Abel);
@@ -74,15 +75,16 @@ body{
 .content-side img{
     width: 100%;
     height: auto;
+    margin-bottom: 0.5em;
 }
-.content-side h4{
+.content-side a{
     text-align: left;
     font-size: 1.3em;
-    margin-top: 0.5em;
+    text-decoration: none;
     color: var(--midnight);
     font-family: var(--Anton);
 }
-.content-side h4:hover{
+.content-side a:hover{
     color: var(--bg-text);
 }
 .content-side p{
@@ -111,14 +113,15 @@ body{
 .content-center img{
     width: 100%;
     height: auto;
+    margin-bottom: 0.5em;
 }
-.content-center h2{
+.content-center a{
     text-align: center;
-    margin-top: 0.5em;
+    text-decoration: none;
     color: var(--midnight);
     font-family: var(--Anton);
 }
-.content-center h2:hover{
+.content-center a:hover{
     color: var(--bg-text);
 }
 .content-center p{
@@ -143,9 +146,245 @@ body{
     color: var(--bg-background);
 }
 
+
+/*--- post content ---*/
+.post-content img{
+    width:100%;
+    height:auto;
+}
+.post-content a{
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: var(--Anton);
+    color: var(--midnight);
+    text-align: left;
+}
+.post-content a:hover{
+    color: var(--bg-text);
+}
+.post-content p{
+    text-align: left;
+    font-size: 1em;
+    margin-top: 0.5em;
+    color: var(--bg-text);
+    font-family: var(--Abel);
+}
+.post-content .author{
+    float: left;
+    margin: 1em 0.5em;
+    font-size: 1em;
+    font-family: var(--Abel);
+    
+}
+.post-content .date{
+    float: right;
+    margin: 1em 0.5em;
+    font-size: 1em;
+    font-family: var(--Abel);
+    font-style: italic;
+}
+
 /*--- new-content css---*/
 .new{
     background-color: var(--background);
     margin-top: 3em;
     padding: 1.5em;
+}
+.latest-title{
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+.latest-title h3{
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--bg-text);
+}
+.latest-title hr{
+    border: 0.2em solid var(--yellow);
+    margin: 0.8em 0;
+}
+.new .new-content{
+    margin: 2em 1em;
+}
+.new .new-content img{
+    width:100%;
+    height: auto;
+}
+.new .new-content .title{
+    margin-top: -6em;
+    padding: 1em 1em;
+    background: #262626;
+    position: relative;
+    z-index: 2;
+    opacity: 80%;
+}
+.new .new-content .title a{
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    z-index: 1;
+    font-weight: 400;
+    font-family: var(--Anton);
+}
+.new .new-content .title a:hover{
+    color: var(--yellow);
+}
+.new .new-content .new-side-content{
+    margin-bottom: 1em;
+}
+.new .new-content .new-side-content img{
+    width:100%;
+    height: auto;
+}
+.new .new-content .new-side-content .side-title{
+    background: var(--midnight);
+    padding: 0.5em 0.5em;
+}
+.new .new-content .new-side-content .side-title a{
+    text-decoration: none;
+    color: var(--bg-background);
+    font-size: 1.2em;
+    font-weight: 300;
+    font-family: var(--Anton);
+
+}
+
+
+
+
+
+
+
+/*--- footer css ---*/
+
+/* ----------------- Footer --------------------- */
+
+footer.footer{
+    height: 100%;
+    background: var(--bg-color);
+    position: relative;
+}
+
+footer.footer .container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+footer.footer .container > div{
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 3rem .9rem;
+}
+
+footer.footer .container h2{
+    color: var(--white);
+}
+
+footer.footer .newsletter .form-element{
+    background: black;
+    display: inline-block;
+}
+
+footer.footer .newsletter .form-element input{
+    padding: .5rem .7rem;
+    border: none;
+    background: transparent;
+    color: white;
+    font-family: var(--Josefin);
+    font-size: 1rem;
+    width: 74%;
+}
+
+footer.footer .newsletter .form-element span{
+    background: var(--sky);
+    padding: .5rem .7rem;
+    cursor: pointer;
+}
+
+footer.footer .instagram div > img{
+    display: inline-block;
+    width: 25%;
+    height: 50%;
+    margin: .3rem .4rem;
+}
+
+footer.footer .follow div i{
+    color: var(--white);
+    padding: 0 .4rem;
+}
+
+footer.footer .rights{
+    justify-content: center;
+    font-family: var(--Josefin);
+}
+
+footer.footer .rights h4 a{
+    color: var(--white);
+}
+
+footer.footer .move-up{
+    position: absolute;
+    right: 6%;
+    top: 50%;
+}
+
+footer.footer .move-up span{
+    color: var(--midnight);
+}
+
+footer.footer .move-up span:hover{
+    color: var(--white);
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 960px){
+    .box-line2{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 960px){
+    .box-line1{
+        display: none;
+    }
+    .box-line2{
+        margin-top: 2em;
+    }
+    .one-side{
+        display:none;
+    }
+    .main-content{
+        margin: 1em 1em;
+    }
+    .new-side-content{
+        margin:1em 1em;
+    }
+
+}
+
+
+
+/*--- media query ---*/
+@media only screen and (max-width: 767px){
+    .box-line1{
+        display: none;
+    }
+    .box-line2{
+        margin-top: 2em;
+    }
+    .content-side{
+        margin: 1em 1em;
+    }
+    .one-center{
+        display:none;
+    }
+    .main-content{
+        margin: 1em 1em;
+    }
+    .new-center-content{
+        display: none;
+    }
+    
+
+   
 }

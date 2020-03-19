@@ -148,9 +148,13 @@ body{
 
 
 /*--- post content ---*/
+.post-content{
+    margin: 1em 0;
+}
 .post-content img{
     width:100%;
     height:auto;
+    margin-bottom: 0.5em;
 }
 .post-content a{
     text-decoration: none;
@@ -272,11 +276,71 @@ body{
 }
 
 
+/*---- halaman Post.html css ----*/
+.main-post{
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+.main-post img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 2em;
+}
+.main-post a{
+    text-decoration: none;
+    text-align: left;
+    font-size: 4em;
+    color: var(--midnight);
+    font-family: var(--Anton);
+}
+.main-post p{
+    font-size: 1.2em;
+    font-family: var(--Abel);
+    color: var(--bg-text);
+    text-align: left;
+    margin-top: 1em;
+}
+
+/*--- botom-post css ---*/
+
+.text-center{
+    background-color: #4f7177;
+    padding: 5em 2em;
+    height: 40vh;
+}
+.text-center:hover{
+    background-color:#53686e;
+}
+.text-side{
+    background-color:#5b8188;
+    padding: 5em 2em;
+    height: 40vh;
+}
+.text-side:hover{
+    background-color: #53686e;
+}
+.botom-post a{
+    text-align: center;
+    color: var(--bg-background);
+    font-family: var(--Anton);
+    opacity: 5em;
+    text-decoration: none;
+
+}
+
+
+
+
+/*---- halaman Post css ----*/
+
+
 /*--- footer css ---*/
 .footer{
     background-color: var(--background);
     padding: 2em 1em;
+    
 }
+
 .footer h2{
     font-size: 1.5rem;
     font-family: var(--Anton);
@@ -296,6 +360,10 @@ body{
     color: white;
     font-family: var(--Josefin);
     font-size: 1rem;
+    margin-bottom: 1em;
+}
+.footer .footer-menu{
+    margin: 1em 0;
 }
 .footer .follow i{
     margin: 0 1em;
@@ -331,10 +399,13 @@ body{
         display:none;
     }
     .main-content{
-        margin: 1em 1em;
+        margin: 1em 0;
     }
     .new-side-content{
         margin:1em 1em;
+    }
+    .text-center{
+        display: none;
     }
 
 }
@@ -356,11 +427,12 @@ body{
         display:none;
     }
     .main-content{
-        margin: 1em 1em;
+        margin: 1em 0;
     }
     .new-center-content{
         display: none;
     }
+    
     
 
    

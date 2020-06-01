@@ -5,16 +5,15 @@ var CACHE_NAME = 'static-akakom-news-v1';
 var urlsToCache = [
   './',
   './assets/css/main.css',
-  './assets/css/bootstrap.min.css'
-  /*'./index.html',
-  './assets/css/bootstrap.min.css',
+  './assets/css/bootstrap.min.css'/*
+  './index.html',
   './assets/css/aos.css',
   './assets/css/font-aawesome.min.css',
   './assets/css/fonts.css',
   './assets/css/main.css',
   './assets/js/aos.js',
   './assets/js/bootstrap.min.js',
-  './assets/js/jquery-3.4.1.min.js'*/
+  './assets/js/jquery-3.4.1.min.js' */
 ];
 
 // Perform install steps
@@ -57,8 +56,11 @@ self.addEventListener('activate', function(event) {
 
  
   self.addEventListener('fetch', function(event) {
+    var request = event.request
+   // console.log(request)
     event.respondWith(
       caches.match(event.request)
+
         .then(function(response) {
           // Cache hit - return response
           if (response) {

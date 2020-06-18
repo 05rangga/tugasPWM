@@ -26,7 +26,11 @@ $(document).ready(function () {
       //jika fetch gagal (user sedang offline)
     }).catch(function(){
       console.log('Anda sedang offline')
-
+      var data = createDatabase()
+      console.log(data)
+     //createDatabase()
+      
+     // 
     })
 
      //console.log(getDataStatus)
@@ -106,46 +110,6 @@ $(document).ready(function () {
       } 
      }
       
-      
-    //All news
-    
-   /*
-    var datResponse = ''
-    function renderData(data) {
-      $.get(url,function(data){
-        //console.log(data)
-        if(data.status == 'ok'){
-          $.each(data.articles, function(key, items){
-            if(items.author == null){
-              var author = 'Admin'
-            }else{
-              var author = items.author
-            }
-            
-            datResponse +=  '<div id="post" class="post-content row" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"><div class="col-md-5">'
-                        +'<img src="'+items.urlToImage +'"alt="">'
-                        +'</div>'
-                        +'<div class="col-md-7">'
-                        +'<a href="./post.html"> <h4>'+items.title+'</h4> </a>'
-                        +'<p>'+items.description+'</p>'
-                        +'<span class="author"><i class="fa fa-user text-gray"></i>&nbsp;&nbsp;'+author+'</span>'
-                        +'<span class="date">'+items.publishedAt+'</span>'
-                        +'</div>'
-                        +'</div>'
-                        +'<hr></hr>'
-            
-            //console.log(datResponse)
-          })
-          $('#post-news').html(datResponse)
-         // console.log(items.urlToImage)
-        }else{
-          console.log('get data from newsapi not sucess')
-        }
-          
-      })
-    }
-    */
-      
   //index DB
   //Buat database
     
@@ -163,9 +127,18 @@ $(document).ready(function () {
       //ketika koneksi ke db berhasil
       request.onsuccess = function(e) { 
         db = e.target.result;
+        
         console.log('Database connection succesfully') 
         //memanggil fungsi GetData() 
-        GetData(data)    
+        if(data){
+          GetData(data) 
+          console.log('ini jalan')   
+        }else{
+         // return showData()
+         var dat = showData()
+         console.log(dat)
+        }
+        
           
       }
       //ketika koneksi ke database error
@@ -175,7 +148,7 @@ $(document).ready(function () {
     }
 
    function GetData(data){
-     console.log(data.status)
+    // console.log(data.status)
         if(data.status == 'ok'){
       
            var ItemData = {
@@ -186,13 +159,38 @@ $(document).ready(function () {
             console.log('tes')
         }
    }
-         
+    
+    // membaca data dari indexedDB
+    function showData(){
+      console.log('result') 
+
+      var transaction = db.transaction([StoreName],'readwrite')
+      var objectStore = transaction.objectStore(StoreName)
+      var request     = objectStore.getAll()
+      //var result = request.result[0].data
+      request.onsuccess=function(){
+        var result = request.result[0].data
+        console.log('Read data has been successfully')
+        renderData(result)
+        //
+        console.log(request.result[0].data)
+        //
+       // window.location.reload();
+      }
+      request.onerror=function(error){
+        console.log('some error occur during Read data! '+error)
+      }
+      
+     
+
+    }
+
         
     // fungsi untuk menambah data ke indexedDB
     function addDB(data){
       var transaction = db.transaction([StoreName],'readwrite')
       var objectStore = transaction.objectStore(StoreName)
-      var request = objectStore.add(data);
+      var request = objectStore.put(data);
       request.onsuccess=function(){
         console.log('Data has been successfully Added to '+StoreName); 
        // window.location.reload();
@@ -202,9 +200,6 @@ $(document).ready(function () {
       }
     }  
     
-    function offlineData(){
-
-    }
 
   // Register service worker
   if ('serviceWorker' in navigator) {  //mengecek apakah browser sudah support atau belum
@@ -223,28 +218,10 @@ $(document).ready(function () {
   }
 
 
-  //return data from cache
-  /*
-  caches.match(url).then(function(response){
-    if(!response) throw Error('no data on cache')
-    return response.json()
-  }).then(function(data){
-    if(!getDataStatus){
-      renderData(data)
-      console.log('render data fron cache')
-    }
-  }).catch(function(){
-    return getData
-  }) */
+ 
   
 });
 
 
 
-//referensi 
-
-// https://github.com/MuhammadHamza12/InventoryPWA/blob/master/js/myjs.js
-// https://github.com/abdulhamidOumer/currency-converter
-// https://developers.google.com/web/ilt/pwa/working-with-indexeddb#opening_a_database
-// https://developers.google.com/web/ilt/pwa/lab-indexeddb
 

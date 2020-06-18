@@ -1,7 +1,7 @@
 {
   "name": "Akakom News",
   "short_name": "AkakomNews",
-  "description": "A Progressive Web App for bitsofcode",
+  "description": "Progressive Web App tugas web mobile STMIK AKAKOM",
   "theme_color": "#feda4c",
   "background_color": "#f5f5f5",
   "start_url": "./",
